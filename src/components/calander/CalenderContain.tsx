@@ -319,6 +319,7 @@ function CalenderContain() {
                 onSelect={handleDateSelect}
                 initialFocus
                 locale={de}
+                required
               />
             </PopoverContent>
           </Popover>
