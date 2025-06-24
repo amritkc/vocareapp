@@ -67,7 +67,7 @@ interface AppointmentFormData {
 
 function CalenderContain() {
   // Set initial date to current date - using the provided date
-  const [date, setDate] = useState<Date>(new Date("2025-06-23"));
+  const [date, setDate] = useState<Date>(new Date());
   const [view, setView] = useState<"liste" | "woche" | "monat">("liste");
 
   // Dialog states

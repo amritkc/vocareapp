@@ -132,9 +132,8 @@ export default function MonthView({
     onDateSelect(day);
   };
 
-  // Check if a date is today
   const isToday = (date: Date) => {
-    const today = new Date("2025-06-23"); // Use your current date
+    const today = new Date(); 
     return (
       date.getDate() === today.getDate() &&
       date.getMonth() === today.getMonth() &&

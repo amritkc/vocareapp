@@ -23,7 +23,7 @@ interface Appointment {
 interface WeekViewProps {
   appointments: Appointment[];
   selectedDate: Date;
-  currentDateTime?: Date; // For showing the current time indicator
+  currentDateTime?: Date; 
   onViewAppointment?: (id: string) => void;
 }
 
@@ -35,7 +35,7 @@ const timeToMinutes = (time: string) => {
 
 // Convert minutes since midnight to top position in pixels
 const minutesToPosition = (minutes: number) => {
-  return (minutes / (24 * 60)) * 1440; // 1440px = 24 hours at 60px per hour
+  return (minutes / (24 * 60)) * 1440; 
 };
 
 export function WeekView({ 
@@ -63,14 +63,14 @@ export function WeekView({
     updateTimeDisplay();
     
     // Set interval for updates
-    const intervalId = setInterval(updateTimeDisplay, 60000); // Update every minute
+    const intervalId = setInterval(updateTimeDisplay, 60000); 
     
     return () => clearInterval(intervalId);
   }, [currentDateTime]);
 
   // Generate an array of dates for the current week
   const weekDates = useMemo(() => {
-    const startDate = startOfWeek(selectedDate, { weekStartsOn: 1 }); // Week starts on Monday
+    const startDate = startOfWeek(selectedDate, { weekStartsOn: 1 }); 
     return Array(7)
       .fill(null)
       .map((_, i) => addDays(startDate, i));
@@ -120,7 +120,7 @@ export function WeekView({
         </div>
 
         {/* Time slots grid */}
-        <div className="relative" style={{ height: '1440px' }}> {/* 24 hours * 60px per hour */}
+        <div className="relative" style={{ height: '1440px' }}> 
           {/* Time labels */}
           <div className="absolute top-0 left-0 w-16 h-full">
             {timeSlots.map((hour) => (
@@ -203,8 +203,6 @@ export function WeekView({
               </div>
             ))}
           </div>
-
-          {/* Current time indicator - only show if current day is in view */}
           {weekDates.some(date => isToday(date)) && (
             <div 
               className="absolute left-0 right-0 z-10 flex items-center"
