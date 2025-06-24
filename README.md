@@ -24,7 +24,12 @@ This project is a full-stack prototype for managing appointments in the context 
 - Create, view, and edit appointments via dialog modals
 - Fully responsive interface
 
-## 🛠️ Getting Started
+##  App Demo 
+  [Deployed on Vercel](https://vocareapp.vercel.app/)
+  
+  https://vocareapp.vercel.app/
+   
+##  Getting Started
 
 1. **Clone the repository**
    ```bash
